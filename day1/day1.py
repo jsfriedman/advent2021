@@ -1,8 +1,6 @@
-def part1(sonar_readings):
-    with open(r"C:\Users\megap\Documents\Code\advent2021\input\day1_input.txt") as f:
-        lines = f.read().splitlines()
-    sonar_readings = [int(c) for c in lines]
+import os
 
+def part1(sonar_readings):
     result = 0
     for idx in range(1,len(sonar_readings)):
         if sonar_readings[idx] > sonar_readings[idx-1]: result += 1
@@ -21,7 +19,7 @@ def part2(sonar_readings, window_size):
 
 
 if __name__=='__main__':
-    with open(r"C:\Users\megap\Documents\Code\advent2021\input\day1_input.txt") as f:
+    with open(os.path.abspath('./input/day1_input.txt')) as f:
         lines = f.read().splitlines()
     sonar_readings = [int(c) for c in lines]
     part1(sonar_readings)

@@ -1,3 +1,5 @@
+import os
+
 def part1(instructions):
     direction_totals = {'down':0, 'forward':0, 'up':0}
     for instruction in instructions:
@@ -10,6 +12,6 @@ def part1(instructions):
     print(f"multiplied area is: {final_x_position*final_depth}")
 
 if __name__ =='__main__':
-    with open(r"C:\Users\megap\Documents\Code\advent2021\day2\input\day2_input.txt") as f:
+    with open(os.path.abspath(".\input\day2_input.txt")) as f:
         instructions = f.read().splitlines()
     part1(instructions)
