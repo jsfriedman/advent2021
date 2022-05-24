@@ -21,7 +21,7 @@ def read_inputs():
     boards.append(board_being_built) #get the last board
     return boards, called_numbers
     
-def main(boards, called_numbers):
+def part1(boards, called_numbers):
     winners = {}
     # for each boards, determine if it gets bingo
     for board in boards: #board is a 2D array, list of lists board[row][column]
@@ -34,7 +34,7 @@ def main(boards, called_numbers):
 
 
     best_score = winners[min(winners)]
-    print(f"the best score for this exercise is {best_score}")
+    print(f"part 1, the best score for this exercise is {best_score}")
     return winners
 
 def best_score_for_board(board, called_numbers):
@@ -65,7 +65,14 @@ def bingo_check(board, numbers_so_far):
     
     return empty_bingo
 
+def part2(winners):
+    
+    final_winner_score = winners[max(winners)]
+    print(f"part 2, the score of the final winning board is {final_winner_score}")
+
 if __name__ == '__main__':
     boards, called_numbers = read_inputs()
 
-    winners = main(boards, called_numbers)
+    winners = part1(boards, called_numbers)
+    
+    part2(winners)
